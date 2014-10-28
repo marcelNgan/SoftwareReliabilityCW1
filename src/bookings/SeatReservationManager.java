@@ -8,7 +8,7 @@ public class SeatReservationManager {
             0 <= x && x < seatReservations.length ==>
             seatReservations[x] != null &&
             seatReservations[x].length > Seat.MAX_NUMBER - Seat.MIN_NUMBER &&
-            \elemtype(\typeof(seatReservations[x])) == \type(Customer));
+            \type(Customer) == \elemtype(\typeof(seatReservations[x])));
     @*/
     private final Customer[][] seatReservations;
     
@@ -104,6 +104,7 @@ public class SeatReservationManager {
         return (char)(Seat.MIN_ROW + index);
     }
 
+    /*@ pure @*/
     private /*@ helper @*/ static int indexToNumber(int index) {
         return index + Seat.MIN_NUMBER;
     }
